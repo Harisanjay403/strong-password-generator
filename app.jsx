@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react' ;
 export default function App() {
+    const [length,setLength]=useState(8)
   return (
       <>
           <div className="password-generator">
@@ -7,7 +8,8 @@ export default function App() {
               
               <div className="input-group">
                   <label htmlFor="num">Password Length</label>
-                  <input type="number" id="num" />
+                  <input type="number" id="num" value={length} onChange=(e)=>{
+                  setLength(e.target.value)}/>
               </div>
 
                <div className="checkbox-group">
